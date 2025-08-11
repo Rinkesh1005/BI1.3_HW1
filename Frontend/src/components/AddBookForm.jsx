@@ -22,13 +22,16 @@ const AddBookForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://bi-1-3-hw-1-rb6n.vercel.app/books", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://bi-1-3-hw-1-rb6n-g9ivom6cu-rinkesh1005s-projects.vercel.app/books",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) {
         throw "Failed to add book.";

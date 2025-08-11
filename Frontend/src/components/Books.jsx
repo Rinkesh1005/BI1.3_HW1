@@ -4,16 +4,21 @@ import useFetch from "../useFetch";
 const Books = () => {
   const [successMessage, setSuccessMessage] = useState("");
 
-  const { data, loading, error } = useFetch("https://bi-1-3-hw-1-rb6n.vercel.app/books");
+  const { data, loading, error } = useFetch(
+    "https://bi-1-3-hw-1-rb6n-g9ivom6cu-rinkesh1005s-projects.vercel.app/books"
+  );
 
   const handleDelete = async (bookId) => {
     try {
-      const response = await fetch(`https://bi-1-3-hw-1-rb6n.vercel.app/books/${bookId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://bi-1-3-hw-1-rb6n-g9ivom6cu-rinkesh1005s-projects.vercel.app/books/${bookId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to delete book");
       }
@@ -60,7 +65,13 @@ const Books = () => {
               </p>
               <img src={book.coverImageUrl} alt={book.title} width="100" />
               <p>
-                <button onClick={() => {handleDelete(book._id)}}>Delete</button>
+                <button
+                  onClick={() => {
+                    handleDelete(book._id);
+                  }}
+                >
+                  Delete
+                </button>
               </p>
               <p>{successMessage}</p>
             </li>
