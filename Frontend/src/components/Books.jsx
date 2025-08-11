@@ -4,11 +4,11 @@ import useFetch from "../useFetch";
 const Books = () => {
   const [successMessage, setSuccessMessage] = useState("");
 
-  const { data, loading, error } = useFetch("http://localhost:3000/books");
+  const { data, loading, error } = useFetch("https://bi-1-3-hw-1-rb6n.vercel.app/books");
 
   const handleDelete = async (bookId) => {
     try {
-      const response = await fetch(`http://localhost:3000/books/${bookId}`, {
+      const response = await fetch(`https://bi-1-3-hw-1-rb6n.vercel.app/books/${bookId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

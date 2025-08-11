@@ -22,7 +22,7 @@ const AddBookForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/books", {
+      const response = await fetch("https://bi-1-3-hw-1-rb6n.vercel.app/books", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
